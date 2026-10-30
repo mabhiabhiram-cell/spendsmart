@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #0f172a;
+  background: #f8fafc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f8fafc 0%, #eefaf4 100%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.backup-import-drawer {
+  height: 0;
+}
+
+.backup-import-drawer__panel {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateY(calc(100% - 1.75rem));
+  transition: transform 300ms ease;
+}
+
+.backup-import-drawer:hover .backup-import-drawer__panel,
+.backup-import-drawer:focus-within .backup-import-drawer__panel {
+  transform: translateY(0);
+}
+
+.backup-import-drawer__indicator {
+  transition: transform 300ms ease;
+}
+
+.backup-import-drawer:hover .backup-import-drawer__indicator,
+.backup-import-drawer:focus-within .backup-import-drawer__indicator {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backup-import-drawer__panel,
+  .backup-import-drawer__indicator {
+    transition: none;
+  }
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
